@@ -1,0 +1,633 @@
+// Importa fontes do Google Fonts: Roboto e Shadows Into Light para uso no projeto
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light&display=swap');
+
+// Mixin para aplicar uma imagem de fundo com propriedades ajustadas para cobrir o elemento, sem repetição e centralizada
+@mixin background-full($url) {
+  background-image: url(#{$url}); // Define a imagem de fundo via variável
+  background-size: cover;         // Faz a imagem cobrir o elemento todo
+  background-repeat: no-repeat;   // Evita repetição da imagem
+  background-position: center;    // Centraliza a imagem no elemento
+}
+
+// Declaração de variáveis para cores que serão usadas globalmente
+$bg-color: #333333;               // Cinza escuro para fundo e sombra
+$text-color: #93f95c;             // Verde principal para textos e destaques
+$highlight-color: rgb(147, 249, 92); // Verde mais claro para realce (rgb)
+$white-color: #ffffff;            // Branco para textos e fundos claros
+$text-shadow: rgba(248, 249, 245, 0.994); // Sombra clara e quase branca para textos
+$background-green: #66BB6A;       // Verde para botões e elementos de interação
+$background-white: #fcffe8;       // Branco creme para fundos suaves
+$background-green-card: #98FB98;  // Verde claro para os cards de conteúdo
+$background-green-cards: #f1f8c9; // Verde muito suave para seções com cards
+$span-color: #ee90cd;             // Rosa para spans especiais e efeito hover
+
+// Reset básico para remover margens, paddings e definir box-sizing para controlar tamanho dos elementos e aplicar fonte padrão
+* {
+  margin: 0;                      // Remove margens padrão
+  padding: 0;                     // Remove padding padrão
+  box-sizing: border-box;         // Inclui bordas e padding no tamanho total do elemento
+  font-family: "Roboto", sans-serif; // Define a fonte padrão do projeto
+}
+
+// Estilização da tag <header> que é o cabeçalho da página
+header {
+  @include background-full('./assets/banner-verde-acao.jpg'); // Aplica imagem de fundo com mixin
+  height: 80vh;                  // Altura de 80% da área visível do navegador (viewport height)
+  text-align: center;            // Centraliza textos e elementos inline
+  color: $white-color;           // Define cor do texto como branca
+
+  // Estilo para o título principal dentro do header (<h1>)
+  h1 {
+    font-size: 5rem;             // Texto grande para destaque
+    font-weight: bold;           // Texto em negrito
+    margin-bottom: 19px;         // Espaçamento abaixo do título
+  }
+
+  // Estilo para o parágrafo de descrição (<p>)
+  p {
+    font-size: 24px;             // Texto de tamanho médio/grande
+    width: 50vw;                 // Define largura como metade da viewport
+    margin: 0 auto 40px auto;    // Centraliza horizontalmente com margem inferior
+    font-weight: bold;           // Texto destacado em negrito
+  }
+
+  // Estilo para o botão dentro do header (<button>)
+  button {
+    background-color: $background-green; // Cor de fundo verde
+    height: 75px;               // Altura do botão
+    color: $white-color;        // Cor do texto branco
+    border: none;               // Remove bordas padrão
+    padding: 20px 40px;         // Espaçamento interno horizontal e vertical
+    position: relative;         // Assume posicionamento relativo para usar top
+    top: -40px;                 // Posiciona o botão 40px para cima visualmente
+    font-size: 22px;            // Tamanho do texto no botão
+    border-radius: 60px;        // Bordas arredondadas (botão ovoide)
+    font-weight: bold;          // Texto em negrito
+    cursor: pointer;            // Cursor muda para indicar clique
+
+    // Estilos para efeito hover no botão
+    &:hover {
+      background-color: $background-white; // Fundo branco creme
+      color: $background-green;             // Texto verde
+      transform: scale(1.2);                // Aumenta o botão (20%)
+    }
+  }
+
+  // Container interno do header que envolve o conteúdo textual e botão (.box-header)
+  .box-header {
+    background: rgba(0, 0, 0, 0.4); // Fundo preto com 40% de opacidade para transparência
+    height: inherit;                 // Herda a altura do header
+    padding: 200px 40px 40px 40px;  // Espaçamento interno: topo grande para posicionar texto mais abaixo
+    display: grid;                  // Usa grid layout para centralizar conteúdo
+    place-items: center;            // Centraliza vertical e horizontalmente
+    width: 100%;                    // Largura completa
+    text-align: center;             // Centraliza texto
+  }
+}
+
+// Estilização da tag <main> e seção de cartões .cards
+main {
+  min-height: 100vh;       // Define altura mínima para ocupar toda a altura da tela
+  width: 100vw;            // Ocupa toda a largura da viewport
+  background-color: $background-green-cards;  // Mantém fundo verde claro
+  margin: 0;               // Remove margens para evitar deslocamentos
+  padding: 0;              // Sem padding para o main em si
+}
+
+.cards {
+  padding: 40px 20px;          /* Espaçamento interno da seção */
+  text-align: center;          /* Centraliza o texto */
+  display: grid;               /* Usa grid para layout */
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais */
+  gap: 30px;                  /* Espaçamento entre os cards */
+  justify-items: center;      /* Centraliza os cards nas colunas */
+  max-width: 1400px;          /* Largura máxima da seção */
+  margin: 0 auto;             /* Centraliza horizontalmente */
+  width: 100%;                /* Largura total disponível */
+
+  .card {
+    background-color: $background-green-card;  /* Verde claro */
+    box-shadow: 2px 2px 21px -5px $bg-color;  /* Sombra para profundidade */
+    width: 100%;                               /* Largura total da célula */
+    max-width: 280px;                          /* Limite de largura */
+    height: 360px;                             /* Altura fixa */
+    padding-bottom: 20px;                      /* Espaço inferior */
+    display: flex;                             /* Flexbox vertical */
+    flex-direction: column;                    /* Empilha verticalmente */
+    border-radius: 10px;                       /* Bordas arredondadas */
+    transition: transform 0.3s ease;           /* Animação suave em transform */
+    margin: 10px;                              /* Espaço entre cards */
+
+    /* Movimentação para cima e para baixo */
+    &.move-up:hover {
+      transform: translateY(-20px) scale(1.05); /* Move 20px para cima e aumenta */
+      z-index: 10;
+    }
+    &.move-down:hover {
+      transform: translateY(20px) scale(1.05); /* Move 20px para baixo e aumenta */
+      z-index: 10;
+    }
+
+    /* Movimentação para os lados */
+    &.move-left:hover {
+      transform: translateX(-20px) scale(1.05); /* Move 20px para esquerda e aumenta */
+      z-index: 10;
+    }
+    &.move-right:hover {
+      transform: translateX(20px) scale(1.05); /* Move 20px para direita e aumenta */
+      z-index: 10;
+    }
+
+    /* Rotação do card*/
+    &.rotate:hover {
+      transform: rotate(10deg) scale(1.05); /* Rotaciona 10 graus e aumenta */
+      z-index: 10;
+    }
+
+    /* Imagem do card */
+    img {
+      width: 100%;
+      height: 180px;
+      border-radius: 10px 10px 0 0;
+      object-fit: cover;
+    }
+
+    /* Título do card */
+    h2 {
+      font-size: 1.4rem;
+      margin: 12px 0 15px 0;
+      font-weight: bold;
+    }
+
+    /* Texto do card */
+    p {
+      text-align: center;
+      font-size: 0.95rem;
+      margin: 0 15px 20px 15px;
+      font-weight: bold;
+      flex-grow: 1; /* Ocupa o espaço vertical restante */
+    }
+
+    /* Botão do card */
+    button {
+      background-color: $background-green;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 10px;
+      width: 120px;
+      height: 40px;
+      font-size: 15px;
+      cursor: pointer;
+      margin: 0 auto;
+
+      &:hover {
+        background-color: $background-white;
+        color: $background-green;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+// Estilização da seção de formulário (.form__subtitle-paragraph)
+.form__subtitle-paragraph {
+  text-align: center;       // Centraliza todo o conteúdo da seção
+  padding: 100px 40px;      // Espaçamento interno vertical e horizontal
+  width: 100%;              // Ocupa 100% da largura
+
+  // Título do formulário (h2)
+  h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 27px;
+  }
+
+  // Parágrafo de descrição do formulário
+  p {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(133, 133, 133); // Cinza suave para o texto
+    margin: 0 auto 40px auto;
+    max-width: 600px;        // Limita largura para legibilidade
+  }
+
+  // Estilização do próprio formulário
+  form {
+    display: inline-block;   // Permite centralizar com o text-align do container
+    max-width: 450px;
+    width: 100%;
+
+    // Inputs de texto e email
+    input[type="text"],
+    input[type="email"],
+    input[type="text"] {
+      outline-color: $text-color;  // Borda verde ao focar
+      font-size: 20px;
+      font-weight: 500;
+      display: block;              // Exibe em bloco para ficar um abaixo do outro
+      border: none;
+      border-radius: 20px;         // Bordas arredondadas
+      padding: 20px;
+      width: 100%;
+      margin-bottom: 20px;         // Espaço entre campos
+      cursor: text;
+    }
+
+    // Select para escolha de opção
+    select {
+      outline-color: $text-color;
+      font-size: 20px;
+      font-weight: 500;
+      display: block;
+      border: none;
+      border-radius: 20px;
+      padding: 20px;
+      width: 100%;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+  }
+
+  // Botão de envio do formulário
+  button {
+    background-color: $background-green;
+    color: $white-color;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+    padding: 20px;
+    width: 100%;             // Ocupa toda largura do form
+    font-weight: 500;
+    cursor: pointer;
+
+    // Efeito hover no botão do formulário
+    &:hover {
+      background-color: $text-color;
+      color: $bg-color;
+      transform: scale(1.05);
+    }
+  }
+}
+
+// Estilização do rodapé (.copyright)
+.copyright {
+  padding: 27px;             // Espaçamento interno
+  width: 100%;               // Ocupa toda largura
+  background-color: $background-green; // Fundo verde
+
+  p {
+    text-align: center;
+    font-size: 1rem;
+    color: $white-color;
+    font-weight: bold;
+  }
+
+  span {
+    color: $text-color;
+
+    // Efeito hover no texto destacado
+    &:hover {
+      color: $span-color;
+      font-size: 1.2rem;
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Media Queries para tornar o site responsivo (ajustar layout em diferentes resoluções)
+
+// Para telas até 1200px (tablets grandes e notebooks)
+@media (max-width: 1200px) {
+  header {    
+    h1 {
+      font-size: 5rem;     
+    }
+    p {      
+      font-size: 32px;     
+      letter-spacing: 1.5px;
+    }
+  }
+  .cards {
+    grid-template-columns: repeat(3, 1fr); // 3 colunas no grid
+    gap: 25px;             // Espaçamento reduzido entre cards
+    padding: 40px 30px;    // Padding aumentado
+  }
+}
+
+// Para telas até 900px (tablets e telas médias)
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr); // 2 colunas no grid
+    gap: 20px;
+    padding: 30px 20px;
+
+    .card {
+      max-width: 300px;
+      height: 340px;
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        margin-top: 10px;
+      }
+
+      img {
+        height: 160px;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+        margin: 10px 0 12px 0;
+      }
+
+      p {
+        font-size: 0.9rem;
+        margin: 0 12px 18px 12px;
+      }
+
+      button {
+        width: 110px;
+        height: 38px;
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+  }
+}
+
+// Para telas até 768px (tablets menores)
+@media (max-width: 768px) {
+  header {
+    height: 100vh;
+    padding: 0;
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 90px;
+    }
+    p {
+      width: 90vw;
+      font-size: 18px;
+      margin-bottom: 30px;
+      margin-top: -200px;
+    }
+    button {
+      height: 60px;
+      font-size: 18px;
+      padding: 15px 30px;
+      top: -90px;
+    }
+
+    .box-header {
+      padding: 40px 20px;
+      display: grid;
+      place-items: center;
+      grid-template-rows: auto auto auto;
+      gap: 20px;
+    }
+  }
+
+  .cards {
+    padding: 30px 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    .card {
+      width: 100%;
+      max-width: 280px;
+      height: 320px;
+      margin: 5px;
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        margin-top: 12px;
+      }
+
+      img {
+        height: 140px;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+        margin: 10px 0 12px 0;
+      }
+
+      p {
+        font-size: 0.85rem;
+        margin: 0 10px 15px 10px;
+      }
+
+      button {
+        width: 100px;
+        height: 35px;
+        font-size: 13px;
+        padding: 7px;
+      }
+    }
+  }
+
+  .form__subtitle-paragraph {
+    padding: 60px 20px;
+
+    h2 {
+      font-size: 28px;
+    }
+
+    p {
+      margin: 0 20px 30px 20px;
+      font-size: 16px;
+    }
+
+    form {
+      width: 100%;
+      max-width: 400px;
+
+      input,
+      select,
+      button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// Para telas até 600px (celulares grandes)
+@media (max-width: 600px) {
+  header {
+    height: 100vh;
+    padding: 0;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      width: 95vw;
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+    button {
+      height: 50px;
+      font-size: 16px;
+      padding: 12px 25px;
+      top: -200px;
+    }
+    .box-header {
+      padding: 30px 15px;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      grid-template-rows: auto auto auto;
+      gap: 20px;
+    }
+  }
+
+  .cards {
+    padding: 20px 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    .card {
+      width: 100%;
+      max-width: 250px;
+      height: 300px;
+      margin: 5px;
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        margin-top: 15px;
+      }
+
+      img {
+        height: 120px;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+        margin: 8px 0 10px 0;
+      }
+
+      p {
+        font-size: 0.8rem;
+        margin: 0 8px 12px 8px;
+      }
+
+      button {
+          width: 100%;       // Botão ocupa toda a largura do container pai
+          height: 50px;
+    padding: 12px;     // Padding reduzido para melhor proporção
+    font-size: 16px;   // Fonte menor para caber em telas pequenas
+      }
+    }
+  }
+
+  .form__subtitle-paragraph {
+    padding: 40px 15px;
+
+    h2 {
+      font-size: 24px;
+    }
+
+    p {
+      margin: 0 15px 25px 15px;
+      font-size: 15px;
+    }
+
+    form {
+      width: 100%;
+      max-width: 350px;
+
+      input,
+      select,
+      button {
+        width: 100%;
+        padding: 12px;
+        font-size: 15px;
+      }
+    }
+  }
+   .copyright {
+    padding: 15px 22px;             // Reduz padding para diminuir altura do footer
+    margin: 0;                      // Remove margem para compactar ainda mais o espaço
+
+    p {
+      font-size: 0.875rem;          // Diminui a fonte para manter proporção
+      margin: 0;                    // Remove margem para compactar texto
+    }
+
+    span {
+      font-size: 0.9rem;            // Fonte menor para elementos destacados
+    }
+  }
+}
+
+// Para telas até 480px (celulares pequenos)
+@media (max-width: 480px) {
+  header {
+    height: 100vh;
+    padding: 0;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      width: 95vw;
+      font-size: 18px;
+      margin-bottom: 20px;
+      letter-spacing: 1.5px;
+    }
+    button {
+      height: 45px;
+      font-size: 14px;
+      padding: 10px 20px;
+      top: -190px;
+    }
+    .box-header {
+      padding: 20px 10px;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      grid-template-rows: auto auto auto;
+      gap: 20px;
+    }
+  }
+
+.cards {                               // Define duas colunas iguais e espaçamento na grid
+  grid-template-columns: repeat(2, 1fr);   // <— duas colunas de tamanho 1fr (fração)
+  gap: 12px;                              // <— espaçamento entre itens da grid
+  padding: 15px 8px;                      // <— padding interno: 15px vertical, 8px horizontal
+
+  .card {                               // Cada card individual
+    max-width: 200px;                   // <— largura máxima do card
+    height: 280px;                      // <— altura fixa do card
+    margin: 3px;                       // <— margem externa padrão para o card
+
+    &:nth-child(1),                    // <— para o 1º e 2º card filhos
+    &:nth-child(2) {
+      margin-top: 18px;                // <— aumenta margem superior desses cards
+    }
+   
+    img {
+        height: 100px;
+      }
+
+      h2 {
+        font-size: 1rem;
+        margin: 6px 0 8px 0;
+      }
+
+      p {
+        font-size: 0.75rem;
+        margin: 0 6px 10px 6px;
+      }
+
+      button {
+        width: 80px;
+        height: 28px;
+        font-size: 11px;
+        padding: 5px;
+      }
+    }
+  }
+}

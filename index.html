@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- Declaração do tipo de documento HTML5 -->
+<html lang="pt-br">
+  <!-- Tag raiz do HTML com idioma português brasileiro -->
+  <head>
+    <!-- Cabeçalho do documento - contém metadados -->
+    <meta charset="UTF-8" />
+    <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Meta tag para responsividade - ajusta a largura ao dispositivo -->
+
+    <!-- Estilização CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Link para arquivo CSS externo que contém os estilos -->
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3oxeDk5bmpoYzF1MnR3ZHYxdzl4N3QwNWtydWNrdmVibTRhdW85bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/DFsTO64RR3AxbVuB6K/giphy.gif"
+      type="image/x-icon"
+    />
+    <!-- Link para ícone da aba do navegador (favicon) -->
+    <title>Verde Ação</title>
+    <!-- Título que aparece na aba do navegador -->
+  </head>
+  <body>
+    <!-- Corpo principal do documento -->
+    <header>
+      <!-- Cabeçalho da página -->
+      <div class="box-header">
+        <!-- Container interno do header com classe para estilização -->
+        <h1>Verde Ação</h1>
+        <!-- Título principal da página -->
+        <p>
+          <!-- Parágrafo com texto descritivo da organização -->
+          Ser voluntário na Verde Ação é plantar esperança e colher
+          transformação. Juntos, cuidamos do planeta e inspiramos mudanças
+          reais!
+        </p>
+        <button>
+          <!-- Botão de chamada para ação -->
+          Quero ser voluntário
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Conteúdo principal da página -->
+      <section class="cards">
+        <!-- Seção que contém os cards de atividades -->
+
+        <article class="card move-up">
+          <!-- Primeiro card - Plantio de Mudas com classe para movimento para cima -->
+          <img
+            src="./assets/4a8539208d451e6a2eb874d87dce7099d4d73c2a.jpg"
+            alt="Girassois plantados"
+          />
+          <!-- Imagem do card com texto alternativo para acessibilidade -->
+          <h2>Plantio de Mudas</h2>
+          <!-- Título do card -->
+          <p>Cada muda plantada ajuda a restaurar o meio ambiente</p>
+          <!-- Descrição da atividade -->
+          <button>Ver mais</button>
+          <!-- Botão para mais informações -->
+        </article>
+
+        <article class="card rotate">
+          <!-- Segundo card - Educação Ambiental com classe para rotação no hover -->
+          <img
+            src="./assets/5173d40730f37bca96e12b807155415407e71559.jpg"
+            alt="Crianças com mural ambiental"
+          />
+          <!-- Imagem do card com texto alternativo -->
+          <h2>Educação Ambiental</h2>
+          <!-- Título do card -->
+          <p>Promove oficinas e rodas de conversas</p>
+          <!-- Descrição da atividade -->
+          <button>Ver mais</button>
+          <!-- Botão para mais informações -->
+        </article>
+
+        <article class="card move-left">
+          <!-- Terceiro card - Cuidados com classe para movimento para esquerda -->
+          <img
+            src="./assets/89d42414b12e595eb740f12d74785d7666390435.png"
+            alt="Mãos humanas cuidando de uma horta."
+          />
+          <!-- Imagem do card -->
+          <h2>Cuidados</h2>
+          <!-- Título do card -->
+          <p>Ajude a manter áreas preservadas e bem cuidadas</p>
+          <!-- Descrição da atividade -->
+          <button>Ver mais</button>
+          <!-- Botão para mais informações -->
+        </article>
+
+        <article class="card move-down">
+          <!-- Quarto card - Mapeamento com classe para movimento para direita -->
+          <img
+            src="./assets/d92641bb90aad7606a275f9cc4ae0a9252bf3a16.jpg"
+            alt="Floresta de cima"
+          />
+          <!-- Imagem do card -->
+          <h2>Mapeamento</h2>
+          <!-- Título do card -->
+          <p>Indentifique áreas que precisam de mapeamento</p>
+          <!-- Descrição da atividade -->
+          <button>Ver mais</button>
+          <!-- Botão para mais informações -->
+        </article>
+      </section>
+
+      <div>
+        <!-- Container div para a seção do formulário -->
+        <section class="form__subtitle-paragraph">
+          <!-- Seção do formulário de cadastro -->
+          <h2>Cadastre-se como voluntário</h2>
+          <!-- Título da seção -->
+          <p>
+            Faça parte de ações que transformam o mundo. Com pequenas atitudes,
+            você pode gerar grandes impactos na natureza e na comunidade
+          </p>
+          <!-- Texto descritivo da seção -->
+
+          <form action="">
+            <!-- Formulário de cadastro com action="" (envia para a mesma página) -->
+            <input name="nome" type="text" placeholder="Nome" required />
+            <!-- Campo de entrada para nome - obrigatório -->
+            <input name="email" type="email" placeholder="Email" required />
+            <!-- Campo de entrada para email - obrigatório e com validação -->
+            <input name="cidade" type="text" placeholder="Cidade" required />
+            <!-- Campo de entrada para cidade - obrigatório -->
+            <select name="activity" id="acti" required>
+              <!-- Lista suspensa para seleção de atividade - obrigatória -->
+              <option value="" selected>Selecione a atividade</option>
+              <!-- Opção padrão não selecionada -->
+              <option value="Plantio">Plantio de Mudas</option>
+              <!-- Opção para atividade de plantio -->
+              <option value="Educação">Educação Ambiental</option>
+              <!-- Opção para atividade de educação -->
+              <option value="Cuidados">Cuidados</option>
+              <!-- Opção para atividade de cuidados -->
+              <option value="Mapeamento">Mapeamento</option>
+              <!-- Opção para atividade de mapeamento -->
+            </select>
+
+            <button type="submit">Cadastre-se</button>
+            <!-- Botão de envio do formulário -->
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer class="copyright">
+      <!-- Rodapé da página -->
+      <a
+        class="footer__brand"
+        href="https://raizertechdev-portfolio.netlify.app/"
+        target="_blank"
+        title="Portfolio"
+      >
+        <!-- Link para portfolio do desenvolvedor -->
+        <p>@2025 <span>AçãoVerde</span> dos direitos reservados</p>
+        <!-- Texto de copyright com span para destaque -->
+      </a>
+    </footer>
+  </body>
+</html>
