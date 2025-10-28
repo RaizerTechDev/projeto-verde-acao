@@ -2,10 +2,7 @@
 
 # Projeto Ação Verde
 
-[( Clique aqui para o `Projeto Ação-Verde!!`)](http://127.0.0.1:5500/)
-
-<br>
-  
+[( Clique aqui para o `Projeto Verde-Ação!!`)](https://projeto-verde-acao-raizertech.netlify.app/)
 
 <img src="https://media.giphy.com/media/3zSF3Gnr7cxMbi6WoP/giphy.gif" align="center" height="55" width="55" /> [Demonstração-Projeto-Ação-Verde] <img src="https://media.giphy.com/media/E5DzZsofmgxc9wjbhX/giphy.gif" align="center" height="35" width="35" />
 
@@ -32,7 +29,7 @@
 
 ## Objetivo
 
-♻️ O projeto Ação Verde foi realizado como parte do curso Vai na Web 1. O objetivo é apresentar ações ambientais e incentivar o voluntariado, promovendo práticas sustentáveis que ajudem na preservação do meio ambiente. O site apresenta diferentes atividades como plantio de mudas, educação ambiental, cuidados e mapeamento de áreas para conscientização e engajamento da comunidade.
+♻️ O projeto Ação Verde foi realizado como parte do curso Vai na Web. O objetivo é apresentar ações ambientais e incentivar o voluntariado, promovendo práticas sustentáveis que ajudem na preservação do meio ambiente. O site apresenta diferentes atividades como plantio de mudas, educação ambiental, cuidados e mapeamento de áreas para conscientização e engajamento da comunidade.
 
 <br>
 
@@ -66,7 +63,7 @@
 
 ### Modo Deploy
 
-- Clique no deploy `Projeto Ação-Verde!!`)]() Projeto hospedado em ```Netify```:
+- Clique no deploy `Projeto Ação-Verde!!`)](https://projeto-verde-acao-raizertech.netlify.app/) Projeto hospedado em ```Netify```:
 
 <br>
 
