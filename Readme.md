@@ -1,6 +1,6 @@
 <div align="center">
 
-# Projeto Ação Verde
+# Projeto Verde-Ação
 
 [( Clique aqui para o `Projeto Verde-Ação!!`)](https://projeto-verde-acao-raizertech.netlify.app/)
 
