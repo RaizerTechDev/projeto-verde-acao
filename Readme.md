@@ -78,6 +78,3 @@ Clica no VsCode em ```Go Live``` - Assim abrirá no navegador ```http://127.0.0.
   &nbsp;&nbsp;&nbsp;<a href="https://api.whatsapp.com/send/?phone=47999327137">Whatsapp</a> | <a href="https://www.linkedin.com/in/raizer-rafael/">LinkedIn</a> | <a href="https://github.com/RaizerTechDev">GitHub</a> | <a href="https://public.tableau.com/app/profile/rafael.raizer">Tableau</a> | <a href="https://raizertechdev-portfolio.netlify.app/">Portfólio</a>  
   </p>
 </p>
-
-
-
