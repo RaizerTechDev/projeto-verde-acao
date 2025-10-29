@@ -52,14 +52,7 @@
 
 <img src="https://media.giphy.com/media/u2pmTWUi0MXjyrMaVj/giphy.gif" align="center" height="65" width="65" />  
 
-### HTML (```Live Server```)
-
-- No arquivo `index.html` clique com o botão direito e selecione:  
-```Go Live```
-
-- Assim abrirá no navegador do Projeto com o título: `Ação Verde`
-
-####  A página será aberta em seu navegador em modo de desenvolvimento.
+Clica no VsCode em ```Go Live``` - Assim abrirá no navegador ```http://127.0.0.1:5500/``` o Projeto com o título: `Ação Verde`. 
 
 ### Modo Deploy
 
