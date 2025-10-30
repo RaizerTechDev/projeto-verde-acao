@@ -18,7 +18,7 @@
 - 🔹[Objetivo](#objetivo)
 - [Tecnologias](#tecnologias)
 - 🔹[Como Rodar o Projeto](#como-rodar-o-projeto)
-  - 🔹[HTML (```Live Server```)](#html-live-server)
+  - 🔹[Plataforma VsCode](#plataforma-vscode)
   - 🔹[Modo Deploy](#modo-deploy)
 - 🔹[Licença](#licença)
 - 🔹[Autor](#autor)
