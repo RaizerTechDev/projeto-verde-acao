@@ -42,7 +42,6 @@
 - SASS/SCSS
 - CSS3
 - HTML5
-- VSCode com extensão Live Server para desenvolvimento 
 
 <br>
 
@@ -52,7 +51,9 @@
 
 <img src="https://media.giphy.com/media/u2pmTWUi0MXjyrMaVj/giphy.gif" align="center" height="65" width="65" />  
 
-Clica no VsCode em ```Go Live``` - Assim abrirá no navegador ```http://127.0.0.1:5500/``` o Projeto com o título: `Ação Verde`. 
+### Plataforma VsCode
+
+- Clica no VsCode em ```Go Live``` - Assim abrirá no navegador ```http://127.0.0.1:5500/``` o Projeto com o título: `Verde Ação`. 
 
 ### Modo Deploy
 
